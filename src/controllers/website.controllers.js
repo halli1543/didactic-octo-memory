@@ -5,6 +5,7 @@ const menu = [
     { food: 'steak', day: 'fimmtudagur'},
     { food: 'lobster', day: 'föstudagur'},
 ];
+module.exports = menu
 
 exports.GetHomePage = (req, res) => {
     res.render('index', { title: 'welcome to menu'});
