@@ -1,16 +1,17 @@
-const menu = [
-    { food: 'pizza', day: 'mánudagur'},
-    { food: 'pasta', day: 'þriðjudagur'},
-    { food: 'lamb', day: 'miðvikudagur'},
-    { food: 'steak', day: 'fimmtudagur'},
-    { food: 'lobster', day: 'föstudagur'},
-];
-module.exports = menu
+const menu = require('../data/menu');
 
-exports.GetHomePage = (req, res) => {
-    res.render('index', { title: 'welcome to menu'});
+exports.GetHomePage = (req, res, next) => {
+    try {
+        res.render('index', { title: 'welcome to menu website'});
+    } catch (err) {
+        next(err)
+    }
 };
 
-exports.GetMenu = (req, res) => {
-    res.render('menu', { title: 'menu', menu});
+exports.GetMenu = (req, res, next) => {
+    try {
+        res.render('menu', 'menu', menu);
+    } catch (err) {
+        next(err);
+    }
 };

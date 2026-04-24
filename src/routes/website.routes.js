@@ -2,7 +2,7 @@ const express = require('express');
 const router = express.Router();
 const websiteController = require('../controllers/website.controllers');
 
-router.get('/', startrekController.GetHomePage);
-router.get('/shows', startrekController.getMenu);
+router.get('/', websiteController.GetHomePage);
+router.get('/menu', websiteController.getMenu);
 
-module.exports =router;
+module.exports = router;

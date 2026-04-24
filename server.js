@@ -1,20 +1,20 @@
 const express = require('express');
 const path = require('path');
 
-const websiteRoutes = require(./src/routes/Website.routes );
+const websiteRoutes = require('./src/routes/website.Routes');
 
 const app = express();
 const PORT = process.env.PORT || 3000;
 
 app.set('views', path.join(__dirname, src/views));
-app.set('vies engine', 'ejs');
+app.set('view engine', 'ejs');
 
 app.use(express.static(path.join(__dirname, 'public')));
 
-app.use('/', routes);
+app.use('/', websiteRoutes);
 
 app.use((req, res, next) => {
-    res.status(404).render('404', { title: 'page not found'})
+    res.status(404).render('404', { title: 'page not found'});
 });
 
 app.use((err, req, res, next) => {
@@ -23,5 +23,5 @@ app.use((err, req, res, next) => {
 });
 
 app.listen(PORT, () => {
-    console.log('server running at http://localhost${PORT}')
+    console.log(`server running at http://localhost${PORT}`)
 })
