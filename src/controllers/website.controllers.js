@@ -16,3 +16,11 @@ exports.GetMenu = (req, res, next) => {
         next(err);
     }
 };
+
+exports.getGullfoss = (req, res, next) => {
+    try {
+        res.render('gullfoss', { title: 'Gullfoss' });
+    } catch (err) {
+        next(err);
+    }
+};
