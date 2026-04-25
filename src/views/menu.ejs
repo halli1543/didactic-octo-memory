@@ -1,7 +1,10 @@
-<% menu.forEach(menu => { %>
-    <div>
-        <a href="/menu/<%= menu.food %>">menu.food</a>
-        <span><%= menu.day</span>
-    </div>
-
-<% }) %>
+<%- include('partials/header', { title: 'menu' }) %>
+<main>
+    <h1>menu</h1>
+    <ul>
+        <% menu.forEach(item => { %>
+            <li><%= item.name %> - <%= item.day %></li>    
+           <% }) %>
+    </ul>
+</main>
+<%- include('partials/footer') %>

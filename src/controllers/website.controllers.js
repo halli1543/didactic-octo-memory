@@ -1,8 +1,9 @@
-const menu = require('../data/menu');
+const { render } = require('express/lib/response');
+const menu = require('../views/menu');
 
 exports.GetHomePage = (req, res, next) => {
     try {
-        res.render('index', { title: 'welcome to menu website'});
+        res.render('index', { title: 'welcome to website'});
     } catch (err) {
         next(err)
     }
@@ -10,7 +11,7 @@ exports.GetHomePage = (req, res, next) => {
 
 exports.GetMenu = (req, res, next) => {
     try {
-        res.render('menu', 'menu', menu);
+        res.render('menu', { menu });
     } catch (err) {
         next(err);
     }
